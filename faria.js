@@ -40,18 +40,18 @@ faria = {
       }
       return i;
     },
-    getBetween: function ( string, a, b=undefined, keepSymbols=true ) {
+    getBetween: function ( string, a, b=null, keepSymbols=true ) {
       const start = a,
             end = b || a,
             exp = new RegExp(start + '.*?' + end, 'g');
-      if (keepSymbols) string.match('exp');
+      if (keepSymbols) return string.match(exp);
 
       return string.match(exp).map((item) => (item.slice(1,-1)));
     },
     formatText: function ( string, args ) {
       if (typeof args === 'string' || typeof args === 'number') args = [args];
-      const markers = util.string.getBetween(string, '{', '}', false),
-            setMarkers = util.data.getUnique(markers);
+      const markers = faria.string.getBetween(string, '{', '}', false),
+            setMarkers = faria.data.getUnique(markers);
       for (let item of setMarkers) {
         if (item === '') {
           console.error('empty format marker ( "{}" ) given');
@@ -68,19 +68,19 @@ faria = {
       const seen = {};
       return array.filter(function ( item ) {
         const k = JSON.stringify(item);
-        return seen.hasOwnProperty(k) ? false : (seen[k] = true);
+        return seen.hasOwnkey(k) ? false : (seen[k] = true);
       });
     },
     getChildren: function ( object, parentString=null, excl=[] ) {
-      if (parentString !== null) object = util.data.selectObjNode(object, parentString);
+      if (parentString !== null) object = faria.data.selectObjNode(object, parentString);
       let nodeList = [];
       for (let node in object) {
         if (!excl.includes(node)) nodeList.push(object[node]);
       }
       return nodeList;
     },
-    findInObjList: function ( list, key, value ) {
-      for (let item of list) {
+    findInObjList: function ( array, key, value ) {
+      for (let item of array) {
         if (item[key] === value) return item;
       }
     },
@@ -108,7 +108,7 @@ faria = {
             arrayTest = toString.call([]);
       for (let key in object) {
         if (toString.call(object[key]) === arrayTest)
-          output[key] = util.random.choose(object[key]);
+          output[key] = faria.random.choose(object[key]);
         else {
           output[key] = {};
           randomiseStructure(object[key], output[key]);
@@ -150,20 +150,20 @@ faria = {
       }
       return output;
     },
-    extend: function extend( destination, source ) {
+    extend: function extend( object, extension ) {
       const toString = Object.prototype.toString,
             objTest = toString.call({});
-      for (let property in source) {
-        if (source[property] && objTest === toString.call(source[property])) {
-          destination[property] = destination[property] || {};
-          extend(destination[property], source[property]);
+      for (let key in extension) {
+        if (extension[key] && objTest === toString.call(extension[key])) {
+          object[key] = object[key] || {};
+          extend(object[key], extension[key]);
         } else {
-          destination[property] = source[property];
+          object[key] = extension[key];
         }
       }
-      return destination;
+      return object;
     }
   }
 };
 
-module.exports = util;
+module.exports = faria;

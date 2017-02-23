@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Arvo', serif;
+  font-size: 20px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  height: 250px;
+  background: linear-gradient(16deg, #ee6ece, #ee8e6e);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#header-title {
+  color: white;
+}
+
+#github-link {
+  color: white;
+  text-decoration: none;
+  border: 1px white solid;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+}
+
+section {
+  width: 100vw;
+  padding-left: 30px;
+  padding-right: 10vw;
+  padding-bottom: 40px;
+}
+
+.bookmark {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-title {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.section-title:hover::before {
+  content:'#';
+  position: absolute;
+  left: 5px;
+  color: #ee6ece;
+}
+
+.st-underline {
+  height: 1px;
+  width: 60%;
+  background: #ee6ece;
+  display: block;
+}
+
+article {
+  padding-bottom: 15px;
+}
+
+.article-title {
+  display: inline-block;
+}
+
+.article-title:hover::before {
+  content:'#';
+  position: absolute;
+  left: 10px;
+  color: #ee6ece;
+}
+
+.article-text {
+  font-size: 0.8rem;
+}
+
+.indented {
+  margin-left: 10px;
+  margin-right: 20px;
+  color: #ee6ece;
+  font-style: italic;
+}
+
+pre {
+  max-height: 500px;
+}

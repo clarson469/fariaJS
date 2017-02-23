@@ -3,8 +3,446 @@
 <head>
   <title>fariaJS</title>
   <meta charset="utf-8" />
+  <link type='text/css' rel='stylesheet' href='index.css' />
+  <link type='text/css' rel='stylesheet', href='prism/prism.css' />
 </head>
 <body>
-  <p>Hello world!</p>
+  <header>
+    <h1 id='header-title'>fariaJS</h1>
+    <a id='github-link' href='https://gitub.com/clarson469/fariaJS'>View on GitHub</a>
+  </header>
+  <section>
+    <h2 id='random' class='section-title'><a href='#random' class='bookmark'>faria.random</a></h2>
+    <span class='st-underline'></span>
+    <article>
+      <h3 id='choose' class='article-title'><a href='#choose' class='bookmark'>choose()</a></h3>
+      <pre><code class='language-javascript'>faria.random.choose( array )</code></pre>
+      <p class='article-text'>Selects a random item from a given array</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>array (Array)</span>
+      <span class='article-text'>The array from which an item will be chosen</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(*)</span>
+      <span class='article-text'>A random item from the array</span>
+      <pre><code class='language-javascript'>faria.random.choose(['a', 'b', 'c']);
+  // => 'a' or 'b' or 'c'</code></pre>
+    </article>
+    <article>
+      <h3 id='randInt' class='article-title'><a href='#randInt' class='bookmark'>randInt()</a></h3>
+      <pre><code class='language-javascript'>faria.random.randInt( a, [b] )</code></pre>
+      <p class='article-text'>Generates a random integer from within the specified range</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>a (Number)</span>
+      <span class='article-text'>If this is the only argument provided, the range of numbers from which the function generates an integer is 0 - <em>a</em>. Otherwise, it is the first of the range bounds</span>
+      <br><br>
+      <span class='article-text indented'>[b] (Number)</span>
+      <span class='article-text'>The upper bounds of the range of numbers from which an integer is generated</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Number)</span>
+      <span class='article-text'>A random integer</span>
+      <pre><code class='language-javascript'>faria.random.randInt(2);
+// => 0 or 1
+
+faria.random.randInt(2, 4);
+// => 2 or 3</code></pre>
+    </article>
+    <article>
+      <h3 id='odds' class='article-title'><a href='#odds' class='bookmark'>odds()</a></h3>
+      <pre><code class='language-javascript'>faria.random.odds( num )</code></pre>
+      <p class='article-text'>Calculates the result of a given decimal odds</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>num (Number)</span>
+      <span class='article-text'>The odds to be calculated. This value must be between 0 and 1 (inclusive)</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Bool)</span>
+      <span class='article-text'>The result of the given odds</span>
+      <pre><code class='language-javascript'>faria.random.odds(0.5);
+// => a 50% chance of being either true or false</code></pre>
+    </article>
+  </section>
+  <section>
+    <h2 id='math' class='section-title'><a href='#math' class='bookmark'>faria.math</a></h2>
+    <span class='st-underline'></span>
+    <article>
+      <h3 id='sum' class='article-title'><a href='#sum' class='bookmark'>sum()</a></h3>
+      <pre><code class='language-javascript'>faria.math.sum( array )</code></pre>
+      <p class='article-text'>Sums all the items of an array</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>array (Array)</span>
+      <span class='article-text'>The array whose items will be summed.<br>(Note that while the items of the array do not all have to be of the same type, mixing types will produce perhaps unexpected results)</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Number | String)</span>
+      <span class='article-text'>The sum of the given array's items</span>
+      <pre><code class='language-javascript'>faria.math.sum([1, 2, 3]);
+// => 6
+
+faria.math.sum([true, true, false]);
+// => 2
+
+faria.math.sum(['a', 'b', 'c']);
+// => 'abc'
+
+faria.math.sum(['a', 2, 'c']);
+// => 'a2c'</code></pre>
+    </article>
+    <article>
+      <h3 id='range' class='article-title'><a href='#range' class='bookmark'>range()</a></h3>
+      <pre><code class='language-javascript'>faria.math.range( a, [b] )</code></pre>
+      <p class='article-text'>Creates an array of incremental integers between the given bounds</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>a (Number)</span>
+      <span class='article-text'>If this is the only argument provided, the range of numbers between which the function generates integers is 0 - <em>a</em>. Otherwise, it is the first of the range bounds</span>
+      <br><br>
+      <span class='article-text indented'>[b] (Number)</span>
+      <span class='article-text'>The upper bounds of the range of numbers between which an integers are generated</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>An incremental array of integers</span>
+      <pre><code class='language-javascript'>faria.math.range(3);
+// => [ 0, 1, 2 ]
+
+faria.math.range(5, 9);
+// => [ 5, 6, 7, 8 ]</code></pre>
+    </article>
+  </section>
+  <section>
+    <h2 id='string' class='section-title'><a href='#string' class='bookmark'>faria.string</a></h2>
+    <span class='st-underline'></span>
+    <article>
+      <h3 id='getNthOccurance' class='article-title'><a href='#getNthOccurance' class='bookmark'>geNthOccurance()</a></h3>
+      <pre><code class='language-javascript'>faria.string.getNthOccurance( string, target, n )</code></pre>
+      <p class='article-text'>Returns the index of the first character of an nth substring within a given string</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>string (String)</span>
+      <span class='article-text'>The string to be searched</span>
+      <br><br>
+      <span class='article-text indented'>target (String)</span>
+      <span class='article-text'>The substring to be searched for</span>
+      <br><br>
+      <span class='article-text indented'>n (Number)</span>
+      <span class='article-text'>The occurance of the substring that should be found. Starts counting from 1</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Number)</span>
+      <span class='article-text'>The index of the first character of the nth substring. If no instance can be found, returns -1</span>
+      <pre><code class='language-javascript'>faria.string.getNthOccurance('la la land', 'la', 2);
+// => 3
+
+faria.string.getNthOccurance('la la land', 'la', 4);
+// => -1</code></pre>
+    </article>
+    <article>
+      <h3 id='getBetween' class='article-title'><a href='#getBetween' class='bookmark'>getBetween()</a></h3>
+      <pre><code class='language-javascript'>faria.string.getBetween( string, a, [b, keepSymbols=true])</code></pre>
+      <p class='article-text'>Returns a list of substrings from the given string defined by given surrounding characters</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>string (String)</span>
+      <span class='article-text'>The string to be searched</span>
+      <br><br>
+      <span class='article-text indented'>a (String)</span>
+      <span class='article-text'>If <em>b</em> is not given, this serves as both of the surrounding characters used to identify the desired substrings, otherwise it is the first of those characters</span>
+      <br><br>
+      <span class='article-text indented'>b (String)</span>
+      <span class='article-text'>If passed, the closing character used to identify the desired substrings</span>
+      <br><br>
+      <span class='article-text indented'>keepSymbols (Bool)</span>
+      <span class='article-text'>If true, the substrings returned include their identifying characters</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>An array of all the substrings identified by the given characters. If no substrings can be found, an empty array is returned</span>
+      <pre><code class='language-javascript'>faria.string.getBetween('get %this%', '%');
+// => [ '%this%' ]
+
+faria.string.getBetween('get %this% and %that%', '%', null, false);
+// => [ 'this', 'that' ]
+
+faria.string.getBetween('get {this} and {that}', '{', '}');
+// => [ '{this}', '{that}' ]</code></pre>
+    </article>
+    <article>
+      <h3 id='formatText' class='article-title'><a href='#formatText' class='bookmark'>formatText()</a></h3>
+      <pre><code class='language-javascript'>faria.string.formatText( string, args )</code></pre>
+      <p class='article-text'>Replaces array keys embeded in a string with corresponding substrings</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>string (String)</span>
+      <span class='article-text'>The string to be formatted, containing keys to be replaced contained within curly brackets: "{}"</span>
+      <br><br>
+      <span class='article-text indented'>args (Array | Object | String | Number)</span>
+      <span class='article-text'>The substrings to be inserted into the string, organised according to what key they should replace. If a string or an number is given, the function converts that to a single-item array, and so it should be denoted accordingly in the <em>string</em> argument</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(String)</span>
+      <span class='article-text'>The same string that was passed, but with all denoted keys replaced with their respective substrings</span>
+      <pre><code class='language-javascript'>faria.string.formatText('the {0} where it {1}', ['room', 'happens']);
+// => 'the room where it happens'
+
+faria.string.formatText('My name is {name}, I am {age} years old.', {name:'Joe', age:31});
+// => 'My name is Joe, I am 31 years old.'
+
+faria.string.formatText('{0} {0} {0}nd', 'la');
+// => 'la la land'</code></pre>
+    </article>
+  </section>
+  <section>
+    <h2 id='data' class='section-title'><a href='#data' class='bookmark'>faria.data</a></h2>
+    <span class='st-underline'></span>
+    <article>
+      <h3 id='getUnique' class='article-title'><a href='#getUnique' class='bookmark'>getUnique()</a></h3>
+      <pre><code class='language-javascript'>faria.data.getUnique( array )</code></pre>
+      <p class='article-text'>Returns the given array with all duplicated items removed - a set.<br>The function does not confuse between like values: '1' and 1 are treated as being different, nor does it confuse like types: {key:'a'} and {key:'b'} are also treated as being different.<br>(Note that the function may take a while if given a very large array containing a number of complex objects)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>array (Array)</span>
+      <span class='article-text'>The array whose duplicates will be removed</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>The given array, with all duplicates removed</span>
+      <pre><code class='language-javascript'>faria.data.getUnique([1,1,2,3,2,4]);
+// => [ 1, 2, 3, 4 ]
+
+faria.data.getUnique(['1', 1, {dup: 1}, {dup: 1}, {dup: 2}, ['a', 'b'], ['a', 'b']]);
+// => [ '1', 1, {dup:1}, {dup:2}, ['a', 'b'] ]</code></pre>
+    </article>
+    <article>
+      <h3 id='getChildren' class='article-title'><a href='#getChildren' class='bookmark'>getChildren()</a></h3>
+      <pre><code class='language-javascript'>faria.data.getChildren( object, [parentString=null, excl=[]] )</code></pre>
+      <p class='article-text'>Returns an array of all the items at a given position, or depth, of an an object</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>Usually an object-literal (although a proper, constructed object-function could be used in certain cases, though it would not be advised), this is the object to be searched</span>
+      <br><br>
+      <span class='article-text indented'>parentString (String)</span>
+      <span class='article-text'>A string representation of the path through the object to the position required. If not given, the function uses the top level of the object<br>(Note that the function returns items of an object, so parentString should always point to a position in the object that still itself contains keys, and not to a deepest position in the object)</span>
+      <br><br>
+      <span class='article-text indented'>excl (Array)</span>
+      <span class='article-text'>An array of the names of any keys whose items you do not want to be included in the returned array</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>An array of the selected items</span>
+      <pre><code class='language-javascript'>faria.data.getChildren({one:1, two:2, three:3});
+// => [ 1, 2, 3 ]
+
+faria.data.getChildren({
+  mod:{
+    mod_2:{
+      hello:'world'
+    }
+  }
+}, 'mod.mod_2');
+// => [ 'world' ]
+
+faria.data.getChildren({
+  mod:{
+    mod_2:{
+      yes:'hello',
+      no:'goodbye'
+    }
+  }
+}, 'mod.mod_2', ['no']);
+// => [ 'hello' ]</code></pre>
+    </article>
+    <article>
+      <h3 id='findInObjList' class='article-title'><a href='#findInObjList' class='bookmark'>findInObjList()</a></h3>
+      <pre><code class='language-javascript'>faria.data.findInObjList( array, key, value )</code></pre>
+      <p class='article-text'>Searches an array of objects for an object whose key identifies a specific value. Useful when you have a number of objects in an array, and know that that all have the same structure, but don't know exactly what they all look like.<br>(Note that this function does rely on the objects having some kind of unique key or property that you know beforehand)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>array (Array)</span>
+      <span class='article-text'>The array of objects to search</span>
+      <br><br>
+      <span class='article-text indented'>key (String)</span>
+      <span class='article-text'>The key by which to identify the desired object</span>
+      <br><br>
+      <span class='article-text indented'>value (*)</span>
+      <span class='article-text'>The value of the desired object's key</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>The desired object</span>
+      <pre><code class='language-javascript'>faria.data.findInObjList([
+  {key: 1},
+  {key: 2}
+], 1);
+// => { key: 1 }</code></pre>
+    </article>
+    <article>
+      <h3 id='assignNodeValue' class='article-title'><a href='#assignNodeValue' class='bookmark'>assignNodeValue()</a></h3>
+      <pre><code class='language-javascript'>faria.data.assignNodeValue( object, nodeString, value )</code></pre>
+      <p class='article-text'>Navigates to a specified position in the given object, and assigns that position a value.<br>Useful for when you need to assign a value to a position in an object, but cannot know exactly what that position will be<br>(Note that if the specified position does not currently exist, the function will create it before assigning it a value)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to change</span>
+      <br><br>
+      <span class='article-text indented'>nodeString (String)</span>
+      <span class='article-text'>A string representing the path to the desired position in the object. Each layer of the object must be denoted by a full stop: "."</span>
+      <br><br>
+      <span class='article-text indented'>value (*)</span>
+      <span class='article-text'>The value to assign</span>
+      <pre><code class='language-javascript'>var obj = {
+  mod:{
+    mod_2:{
+      target:null
+    }
+  }
+};
+
+faria.data.assignNodeValue(obj, 'mod.mod_2.target', 'hello world!');
+
+obj;
+// => { mod: { mod_2: { target: 'hello world' } } }</code></pre>
+    </article>
+    <article>
+      <h3 id='selectObjNode' class='article-title'><a href='#selectObjNode' class='bookmark'>selectObjNode()</a></h3>
+      <pre><code class='language-javascript'>faria.data.selectObjNode( object, nodeString )</code></pre>
+      <p class='article-text'>Performs a similar function to getChildren(), but targetted at one specific position and item, rather than all of the items at a position</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to search</span>
+      <br><br>
+      <span class='article-text indented'>nodeString (String)</span>
+      <span class='article-text'>A string representing the path to the desired position in the object. Each layer of the object must be denoted by a full stop: "."</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(*)</span>
+      <span class='article-text'>The desired item</span>
+      <pre><code class='language-javascript'>faria.data.assignNodeValue({
+  mod:{
+    mod_2:{
+      target:'hello world'
+    }
+  }
+}, 'mod.mod_2.target');
+// => 'hello world'</code></pre>
+    </article>
+    <article>
+      <h3 id='randomiseStructure' class='article-title'><a href='#randomiseStructure' class='bookmark'>randomiseStructure()</a></h3>
+      <pre><code class='language-javascript'>faria.data.randomiseStructure( object )</code></pre>
+      <p class='article-text'>If the given object, at any position, contains an array, this function will replace that array with a randomly chosen value from the same array<br>(Note that, were you you to look at the source code for this function, you would see that it actually accepts two arguments, however, the second argument should not be invoked directly. It exists so that the function can properly iterate through object positions by calling itself with deeper positions of the object)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to "randomise""</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>The randomised object<br>(Note that this is a separate object to the one passed to the function, which remains unchanged)</span>
+      <pre><code class='language-javascript'>faria.data.randomiseStructure({ nums: [1, 2, 3], chars: ['a', 'b', 'c'] });
+// => { nums: 1 or 2 or 3, chars: 'a' or 'b' or 'c' }</code></pre>
+    </article>
+    <article>
+      <h3 id='populateStructure' class='article-title'><a href='#populateStructure' class='bookmark'>populateStructure()</a></h3>
+      <pre><code class='language-javascript'>faria.data.populateStructure( object, index )</code></pre>
+      <p class='article-text'>Peforms a similar function to randomiseStructure(), but instead of selecting random items from an object's arrays, it selects items with a given index<br>(Note that, were you you to look at the source code for this function, you would see that it actually accepts three arguments, however, the third argument should not be invoked directly. It exists so that the function can properly iterate through object positions by calling itself with deeper positions of the object)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to "populate"</span>
+      <br><br>
+      <span class='article-text indented'>index (Number)</span>
+      <span class='article-text'>The index to use to "populate" the object</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>The populated object<br>(Note that this is a separate object to the one passed to the function, which remains unchanged)</span>
+      <pre><code class='language-javascript'>faria.data.populateStructure({ nums: [1, 2, 3], chars: ['a', 'b', 'c'] }, 1)
+// => { nums: 2, chars: b' }</code></pre>
+    </article>
+    <article>
+      <h3 id='copyStructure' class='article-title'><a href='#copyStructure' class='bookmark'>copyStructure()</a></h3>
+      <pre><code class='language-javascript'>faria.data.copyStructure( object )</code></pre>
+      <p class='article-text'>Creates a new object that is exactly the same "shape" as the given object, but where no positions have values assigned<br>(Note that, were you you to look at the source code for this function, you would see that it actually accepts three arguments, however, the third argument should not be invoked directly. It exists so that the function can properly iterate through object positions by calling itself with deeper positions of the object)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to copy</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>The new, empty object<br>(Note that this is a separate object to the one passed to the function, which remains unchanged)</span>
+      <pre><code class='language-javascript'>faria.data.populateStructure({
+  mod:{
+    target:'I want the truth!',
+    mod_2:{
+      target_2:"You can't handle the truth!"
+    }
+  }
+});
+// => { mod: { target: null, mod_2: { target_2: null } } }</code></pre>
+    </article>
+    <article>
+      <h3 id='populateArray' class='article-title'><a href='#populateArray' class='bookmark'>populateArray()</a></h3>
+      <pre><code class='language-javascript'>faria.data.populateArray( length, callback )</code></pre>
+      <p class='article-text'>Essentially a combination of the fill() and map() prototype functions, this creates an array of given length, and fills each position of the array with the output of a given function<br>This is particularly useful for when the function you want will yield a different result everytime it is called</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>length (Number)</span>
+      <span class='article-text'>The size of the array you want to create</span>
+      <br><br>
+      <span class='article-text indented'>callback (Function)</span>
+      <span class='article-text'>The function used to fill each position in the array</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>The newly created array</span>
+      <pre><code class='language-javascript'>// let's assume we have defined an object (named "HashedObj")
+// whose constructor includes a section of code
+// that assigns every new instance of the object with a unique key
+// we can use populateArray() to easily create an array of these objects
+faria.data.populateArray(4, () => new HashedObj());
+// => [ {..., key: '#dfh46', ...}, {..., key: '#xsv5g', ...}, ... ]</code></pre>
+    </article>
+    <article>
+      <h3 id='extend' class='article-title'><a href='#extend' class='bookmark'>extend()</a></h3>
+      <pre><code class='language-javascript'>faria.data.extend( object, extension )</code></pre>
+      <p class='article-text'>A more powerful version of assignNodeValue(), this functions attaches an object structure of any shape or complexity to an existing object, integrating it into any pre-existing shape / struture etc. as needed<br>(Note that this function is intended for manipulating structures, rather than values, and so trying to change an existing position's value will only work if you are changing it to another value. See examples below)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object you want to extend. Best practice would be to create this object as a variable outside of the function, but you can pass it directly and the function will return the extended object</span>
+      <br><br>
+      <span class='article-text indented'>extension (Object)</span>
+      <span class='article-text'>The object to be attached. It can be of any shape or size.</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>The function directly changes the passed object, and while it does give a return value, the best way to use this function is to assign your object elsewhere, and call extend() without assigning it to any variable itself. The initial object will be changed.</span>
+      <pre><code class='language-javascript'>var obj = {};
+
+faria.data.extend(obj, {
+  one:1,
+  two:2,
+  mod:{
+    three:3,
+    mod_2:{
+      target:'hello world'
+    }
+  }
+});
+
+obj;
+// => { one: 1,
+//    two: 2,
+//    mod: { three: 3, mod_2 { target: 'hello world' } } }
+
+var obj = {mod: {four: 4}};
+
+faria.data.extend(obj, {
+  mod:{
+    three:3, mod_2:{
+      target:'hello world'
+    }
+  }
+});
+
+obj;
+// => { mod: { four: 4, three: 3, mod_2: { target: 'hello world' } } }
+
+// NOTE that the function can change values into other values
+var obj = {one: 'one'};
+
+faria.data.extend(obj, {
+  one: 1
+});
+
+obj;
+// => { one: 1 }
+
+// the function cannot change a value into an object, however
+var obj = {mod: 'string'};
+
+faria.data.extend(obj, {
+  mod: {mod_2: [object Object]}
+});
+
+obj;
+// => TypeError: cannot set property [whatever your property name is] of undefined
+</code></pre>
+    </article>
+  </section>
+  <script type='text/javascript' src='prism/prism.js'></script>
 </body>
 </html>
