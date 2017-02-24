@@ -1,4 +1,4 @@
-faria = {
+var faria = {
   random:{
     choose: function ( array ) {
       const index = Math.floor(Math.random() * array.length);
