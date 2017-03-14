@@ -1,7 +1,7 @@
 # fariaJS v0.1.2
 A JavaScript Utility library  
 
-[Documentation] (https://clarson469.github.io/fariaJS/)
+[Documentation](https://clarson469.github.io/fariaJS/)
 
 __N.B. At the minute, fariaJS is only available in ES6. A transpiled version for use in browsers will be available soon.__  
   
