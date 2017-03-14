@@ -1,0 +1,13 @@
+{
+    "main": "faria.js",
+    "license": "MIT"
+    "name": "faria",
+    "readme": "README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/clarson469/fariaJS"
+    },
+    "version": "0.1.1",
+    "homepage": "https://clarson469.github.io/fariaJS",
+    "author": "clarson469"
+}
