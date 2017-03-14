@@ -104,6 +104,34 @@ faria.math.sum(['a', 2, 'c']);
 faria.math.range(5, 9);
 // => [ 5, 6, 7, 8 ]</code></pre>
     </article>
+    <article>
+      <h3 id='checkBetween' class='article-title'><a href='#checkBetween' class='bookmark'>checkBetween()</a></h3>
+      <pre><code class='language-javascript'>faria.math.checkBetween( number, a, [b] )</code></pre>
+      <p class='article-text'>Checks whether or not a number lies within a given range<br>(Note that the range here is inclusive at both ends)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>number (Number)</span>
+      <span class='article-text'>The number to check</span>
+      <br><br>
+      <span class='article-text indented'>a (Number)</span>
+      <span class='article-text'>If this is the only other argument provided, the range of numbers between which the function checks is 0 - <em>a</em>. Otherwise, it is the first of the range bounds</span>
+      <br><br>
+      <span class='article-text indented'>[b] (Number)</span>
+      <span class='article-text'>The upper bounds of the range of numbers between which the function checks for the given number</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Boolean)</span>
+      <span class='article-text'>Whether or not the given number exists inside the range of numbers provided</span>
+      <pre><code class='language-javascript'>faria.math.checkBetween(4, 5);
+// => true
+
+faria.math.checkBetween(6, 5);
+// => false
+
+faria.math.checkBetween(-1, -3, 3);
+// => true
+
+faria.math.checkBetween(1.4, 4);
+// => true</code></pre>
+    </article>
   </section>
   <section>
     <h2 id='string' class='section-title'><a href='#string' class='bookmark'>faria.string</a></h2>
@@ -181,7 +209,7 @@ faria.string.formatText('{0} {0} {0}nd', 'la');
 // => 'la la land'</code></pre>
     </article>
     <article>
-      <h3 id='formatText' class='article-title'><a href='#leadingZeros' class='bookmark'>leadingZeros()</a></h3>
+      <h3 id='leadingZeros' class='article-title'><a href='#leadingZeros' class='bookmark'>leadingZeros()</a></h3>
       <pre><code class='language-javascript'>faria.string.leadingZeros( number, size )</code></pre>
       <p class='article-text'>Converts a number to a string with a given number of leading zeros</p>
       <h5 class='article-subhead'>Arguments</h5>

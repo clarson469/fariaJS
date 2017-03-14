@@ -54,8 +54,10 @@ faria = {
       }
       return output;
     },
-    iterate: function ( callback, count ) {
-      for (let i=0; i<count; i++) callback();
+    checkBetween: function ( number, a, b=null ) {
+      const start = (b === null) ? 0 : a,
+            end = (b === null) ? a : b;
+      return (number >= start && number <= end);
     }
   },
   string:{
@@ -92,7 +94,7 @@ faria = {
     },
     leadingZeros: function( number, size ) {
         let output = number + '';
-        while (output.length < size) 
+        while (output.length < size)
             output = '0' + output;
         return output;
     }
