@@ -1,4 +1,4 @@
-# fariaJS v0.1.2
+# fariaJS v0.1.3
 A JavaScript Utility library  
 
 [Documentation] (https://clarson469.github.io/fariaJS/)

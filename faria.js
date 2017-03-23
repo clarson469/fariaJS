@@ -97,6 +97,15 @@ faria = {
         while (output.length < size)
             output = '0' + output;
         return output;
+    },
+    capitalise: function (string, all=false) {
+      if (all) {
+        const split = string
+          .split(' ')
+          .map((item) => (item.slice(0,1).toUpperCase() + item.slice(1)));
+        return split.join(' ');
+      }
+      return string.slice(0,1).toUpperCase() + string.slice(1);
     }
   },
   data:{
