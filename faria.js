@@ -207,6 +207,19 @@ faria = {
         }
       }
       return object;
+    },
+    cloneObject: function cloneObject( object, output={} ) {
+      const toString = Object.prototype.toString,
+            objTest = toString.call({});
+      for (let key in object) {
+        if (toString.call(object[key]) !== objTest)
+          output[key] = object[key];
+        else {
+          output[key] = {};
+          cloneObject(object[key], output[key]);
+        }
+      }
+      return output;
     }
   }
 };

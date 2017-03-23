@@ -409,7 +409,7 @@ obj;
     <article>
       <h3 id='copyStructure' class='article-title'><a href='#copyStructure' class='bookmark'>copyStructure()</a></h3>
       <pre><code class='language-javascript'>faria.data.copyStructure( object )</code></pre>
-      <p class='article-text'>Creates a new object that is exactly the same "shape" as the given object, but where no positions have values assigned<br>(Note that, were you you to look at the source code for this function, you would see that it actually accepts three arguments, however, the third argument should not be invoked directly. It exists so that the function can properly iterate through object positions by calling itself with deeper positions of the object)</p>
+      <p class='article-text'>Creates a new object that is exactly the same "shape" as the given object, but where no positions have values assigned<br>(Note that, were you you to look at the source code for this function, you would see that it actually accepts two arguments, however, the second argument should not be invoked directly. It exists so that the function can properly iterate through object positions by calling itself with deeper positions of the object)</p>
       <h5 class='article-subhead'>Arguments</h5>
       <span class='article-text indented'>object (Object)</span>
       <span class='article-text'>The object to copy</span>
@@ -510,6 +510,34 @@ faria.data.extend(obj, {
 obj;
 // => TypeError: cannot set property [whatever your property name is] of undefined
 </code></pre>
+    </article>
+    <article>
+      <h3 id='cloneObject' class='article-title'><a href='#cloneObject' class='bookmark'>cloneObject()</a></h3>
+      <pre><code class='language-javascript'>faria.data.cloneObject( object )</code></pre>
+      <p class='article-text'>Provides an identical, but entirely separate version of the given object. Editing the returned object will not be mirrored in the old.<br>(Note that, were you you to look at the source code for this function, you would see that it actually accepts two arguments, however, the second argument should not be invoked directly. It exists so that the function can properly iterate through object positions by calling itself with deeper positions of the object)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to be cloned</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>An object that is identical to that passed as an argument, but that is it's own, completely separate variable.</span>
+      <pre><code class='language-javascript'>var obj = {
+  mod: {
+    mod_1: 1,
+    mod_2: [ 'a', 'b' ],
+    mod_3: 3
+  }
+};
+
+var newObj = faria.data.cloneObject(obj);
+
+newObj.mod.mod_1 = 'one';
+
+console.log(obj);
+// => { mod: { mod_1: 1, mod_2: [ 'a', 'b' ], mod_3: 3 } }
+
+console.log(newObj);
+// => { mod: { mod_1: 'one', mod_2: [ 'a', 'b' ], mod_3: 3 } }</code></pre>
     </article>
   </section>
   <script type='text/javascript' src='prism/prism.js'></script>

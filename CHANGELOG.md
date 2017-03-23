@@ -11,6 +11,7 @@
  * added function `faria.math.checkBetween()`
  * removed incomplete function that shouldn't have been in the file to begin with
  * fixed bug with `faria.data.getUnique()`
-  
+
 ## Version 0.1.3
  * added function `faria.string.capitalise()`
+ * added function `faria.data.cloneObject()`
