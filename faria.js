@@ -104,7 +104,7 @@ faria = {
       const seen = {};
       return array.filter(function ( item ) {
         const k = JSON.stringify(item);
-        return seen.hasOwnkey(k) ? false : (seen[k] = true);
+        return seen.hasOwnProperty(k) ? false : (seen[k] = true);
       });
     },
     getChildren: function ( object, parentString=null, excl=[] ) {

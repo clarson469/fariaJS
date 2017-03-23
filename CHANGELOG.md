@@ -10,3 +10,4 @@
  * added function `faria.string.leadingZeros()`
  * added function `faria.math.checkBetween()`
  * removed incomplete function that shouldn't have been in the file to begin with
+ * fixed bug with `faria.data.getUnique()`
