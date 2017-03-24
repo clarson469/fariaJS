@@ -539,6 +539,33 @@ console.log(obj);
 console.log(newObj);
 // => { mod: { mod_1: 'one', mod_2: [ 'a', 'b' ], mod_3: 3 } }</code></pre>
     </article>
+    <article>
+      <h3 id='shallowSort' class='article-title'><a href='#shallowSort' class='bookmark'>shallowSort()</a></h3>
+      <pre><code class='language-javascript'>faria.data.shallowSort( object, [desc=true] )</code></pre>
+      <p class='article-text'>Sorts the given object according to its first layer of key / value pairs<br>(Note that this function should only be used on a shallow object, whose values are all numbers)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to be sorted</span>
+      <br><br>
+      <span class='article-text indented'>desc (Bool)</span>
+      <span class='article-text'>An optional argument to have the function sort in a descending or ascending pattern</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>An array of [key, value] arrays, sorted according to their value attribute, where key is a key from the given object, and value is its associated value.<br>*(Note that this function deliberately returns not only a separate object to that being sorted, but one of a different type. This is because the ordering of an object's keys cannot be relied upon to remain constant)</span>
+      <pre><code class='language-javascript'>var obj = {
+  a: 3,
+  b: 1,
+  c: 7
+};
+
+faria.data.shallowSort(obj);
+// => [ [ 'c', 7 ], [ 'a', 3 ], [ 'b', 1 ] ]
+
+faria.data.shallowSort(obj, false);
+// => [ [ 'b', 1 ], [ 'a', 3 ], [ 'c', 7 ] ]
+
+</code></pre>
+    </article>
   </section>
   <script type='text/javascript' src='prism/prism.js'></script>
 </body>

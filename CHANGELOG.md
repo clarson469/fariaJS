@@ -15,3 +15,4 @@
 ## Version 0.1.3
  * added function `faria.string.capitalise()`
  * added function `faria.data.cloneObject()`
+ * added function `faria.data.shallowSort()`

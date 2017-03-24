@@ -220,6 +220,16 @@ faria = {
         }
       }
       return output;
+    },
+    shallowSort: function ( object, desc=true ) {
+      const array = [];
+      for (let key in object) {
+        array.push([key, object[key]]);
+      }
+      let output;
+      if (desc) output = array.sort( (a, b) => (b[1] - a[1]) );
+      else output = array.sort( (a, b) => (a[1] - b[1]) );
+      return output
     }
   }
 };
