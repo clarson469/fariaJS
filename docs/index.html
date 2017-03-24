@@ -551,7 +551,7 @@ console.log(newObj);
       <span class='article-text'>An optional argument to have the function sort in a descending or ascending pattern</span>
       <h5 class='article-subhead'>Returns</h5>
       <span class='article-text indented'>(Array)</span>
-      <span class='article-text'>An array of [key, value] arrays, sorted according to their value attribute, where key is a key from the given object, and value is its associated value.<br>*(Note that this function deliberately returns not only a separate object to that being sorted, but one of a different type. This is because the ordering of an object's keys cannot be relied upon to remain constant)</span>
+      <span class='article-text'>An array of [key, value] arrays, sorted according to their value attribute, where key is a key from the given object, and value is its associated value.<br>(Note that this function deliberately returns not only a separate object to that being sorted, but one of a different type. This is because the ordering of an object's keys cannot be relied upon to remain constant)</span>
       <pre><code class='language-javascript'>var obj = {
   a: 3,
   b: 1,
@@ -562,9 +562,35 @@ faria.data.shallowSort(obj);
 // => [ [ 'c', 7 ], [ 'a', 3 ], [ 'b', 1 ] ]
 
 faria.data.shallowSort(obj, false);
-// => [ [ 'b', 1 ], [ 'a', 3 ], [ 'c', 7 ] ]
+// => [ [ 'b', 1 ], [ 'a', 3 ], [ 'c', 7 ] ]</code></pre>
+    </article>
+    <article>
+      <h3 id='isInObjList' class='article-title'><a href='#isInObjList' class='bookmark'>isInObjList()</a></h3>
+      <pre><code class='language-javascript'>faria.data.isInObjList( object, key, value )</code></pre>
+      <p class='article-text'>Effectively the same as "findInObjList()", but returning "true" if an object with the given key / value pair exists in the given array, rather than returning the object in question.</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>array (Array)</span>
+      <span class='article-text'>The array to be searched</span>
+      <br><br>
+      <span class='article-text indented'>key (String)</span>
+      <span class='article-text'>The key by which to identify the desired object</span>
+      <br><br>
+      <span class='article-text indented'>value (*)</span>
+      <span class='article-text'>The value of the desired object's key</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Bool)</span>
+      <span class='article-text'>Whether or not the object with the given key / value pair is in the given array</span>
+      <pre><code class='language-javascript'>var objList = [
+  { id: 'obj01' },
+  { id: 'obj02' },
+  { id: 'obj03' }
+];
 
-</code></pre>
+faria.data.isInObjList(objList, 'id', 'obj03');
+// => true
+
+faria.data.isInObjList(objList, 'id', 'obj04');
+// => false</code></pre>
     </article>
   </section>
   <script type='text/javascript' src='prism/prism.js'></script>

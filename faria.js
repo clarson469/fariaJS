@@ -230,6 +230,12 @@ faria = {
       if (desc) output = array.sort( (a, b) => (b[1] - a[1]) );
       else output = array.sort( (a, b) => (a[1] - b[1]) );
       return output
+    },
+    isInObjList: function ( array, key, value ) {
+      for (let item of array) {
+        if (item[key] === value) return true;
+      }
+      return false;
     }
   }
 };
