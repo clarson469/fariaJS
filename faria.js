@@ -236,6 +236,13 @@ faria = {
         if (item[key] === value) return true;
       }
       return false;
+    },
+    indexInObjList: function ( array, key, value ) {
+      for (let i = 0; i < array.length; i++) {
+        let item = array[i];
+        if (item[key] === value) return i;
+      }
+      return -1;
     }
   }
 };

@@ -17,3 +17,4 @@
  * added function `faria.data.cloneObject()`
  * added function `faria.data.shallowSort()`
  * added function `faria.data.isInObjList()`
+ * added function `faria.data.indexInObjList()`

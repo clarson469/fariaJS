@@ -566,7 +566,7 @@ faria.data.shallowSort(obj, false);
     </article>
     <article>
       <h3 id='isInObjList' class='article-title'><a href='#isInObjList' class='bookmark'>isInObjList()</a></h3>
-      <pre><code class='language-javascript'>faria.data.isInObjList( object, key, value )</code></pre>
+      <pre><code class='language-javascript'>faria.data.isInObjList( array, key, value )</code></pre>
       <p class='article-text'>Effectively the same as "findInObjList()", but returning "true" if an object with the given key / value pair exists in the given array, rather than returning the object in question.</p>
       <h5 class='article-subhead'>Arguments</h5>
       <span class='article-text indented'>array (Array)</span>
@@ -591,6 +591,34 @@ faria.data.isInObjList(objList, 'id', 'obj03');
 
 faria.data.isInObjList(objList, 'id', 'obj04');
 // => false</code></pre>
+    </article>
+    <article>
+      <h3 id='indexInObjList' class='article-title'><a href='#indexInObjList' class='bookmark'>indexInObjList()</a></h3>
+      <pre><code class='language-javascript'>faria.data.indexInObjList( array, key, value )</code></pre>
+      <p class='article-text'>Effectively the same as "findInObjList()" and "isInObjList()", but returning the index of the required object.</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>array (Array)</span>
+      <span class='article-text'>The array to be searched</span>
+      <br><br>
+      <span class='article-text indented'>key (String)</span>
+      <span class='article-text'>The key by which to identify the desired object</span>
+      <br><br>
+      <span class='article-text indented'>value (*)</span>
+      <span class='article-text'>The value of the desired object's key</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Number)</span>
+      <span class='article-text'>The index of the object in the given array, or -1 if the object cannot be found</span>
+      <pre><code class='language-javascript'>var objList = [
+  { id: 'obj01' },
+  { id: 'obj02' },
+  { id: 'obj03' }
+];
+
+faria.data.indexInObjList(objList, 'id', 'obj03');
+// => 2
+
+faria.data.indexInObjList(objList, 'id', 'obj04');
+// => -1</code></pre>
     </article>
   </section>
   <script type='text/javascript' src='prism/prism.js'></script>
