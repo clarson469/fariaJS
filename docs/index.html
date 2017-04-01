@@ -653,6 +653,44 @@ var obj = {
 faria.data.objFilter(obj, i => i.name.includes('Ch'));
 // => { two: { name: 'Cheryl' }, five: { name: 'Cherlene' } }</code></pre>
     </article>
+    <article>
+      <h3 id='targetedSort' class='article-title'><a href='#targetedSort' class='bookmark'>targetedSort()</a></h3>
+      <pre><code class='language-javascript'>faria.data.targetedSort( object, nodeString, desc=true )</code></pre>
+      <p class='article-text'>Similar to faria.data.shallowSort(), but using an additional argument to sort deeper / more complex objects<br>(Note that the object to be sorted must have consistently named child objects for the function to work)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to be sorted</span>
+      <br><br>
+      <span class='article-text indented'>nodeString (String)</span>
+      <span class='article-text'>A string representing the path to whatever value the function should sort by. Each layer of the object should be denoted by a full stop: "."<br>(Note that the <b>first</b> layer of the object should not be included here -- see example)</span>
+      <br><br>
+      <span class='article-text indented'>desc (Bool)</span>
+      <span class='article-text'>An optional argument to have the function sort in a descending or ascending pattern</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Array)</span>
+      <span class='article-text'>An array of [key, value] arrays, sorted according to their value attribute, where key is a key from the "top" of the given object, and value is the value indicated by the "nodeString" argument.<br>(Note that this function deliberately returns not only a separate object to that being sorted, but one of a different type. This is because the ordering of an object's keys cannot be relied upon to remain constant)</span>
+      <pre><code class='language-javascript'>var obj = {
+  one: { num: 6 },
+  two: { num: 3 },
+  three: { num: 9 }
+};
+
+faria.data.targetedSort(obj, 'num');
+// => [ [ 'mod_3', 9 ], [ 'mod_1', 6 ], [ 'mod_2', 3 ] ]
+
+var obj = {
+  a: { mod: { target: 8 } },
+  b: { mod: { target: 12 } },
+  c: { mod: { target: 3 } }
+};
+
+// note that here, the "top level" keys of the object ("a", "b", and "c")
+// are not included in the "nodeString" argument
+// if you look in the function's source code, you'll see that it appends each key
+// to the nodeString as required 
+faria.data.targetedSort(obj, 'mod.target', false);
+// => [ [ 'c', 3 ], [ 'a', 8 ], [ 'b', 12 ] ]</code></pre>
+    </article>
   </section>
   <script type='text/javascript' src='prism/prism.js'></script>
 </body>

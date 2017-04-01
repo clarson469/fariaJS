@@ -226,10 +226,9 @@ faria = {
       for (let key in object) {
         array.push([key, object[key]]);
       }
-      let output;
-      if (desc) output = array.sort( (a, b) => (b[1] - a[1]) );
-      else output = array.sort( (a, b) => (a[1] - b[1]) );
-      return output
+      return desc
+        ? array.sort( (a, b) => (b[1] - a[1]) )
+        : array.sort( (a, b) => (a[1] - b[1]) );
     },
     isInObjList: function ( array, key, value ) {
       for (let item of array) {
@@ -244,13 +243,22 @@ faria = {
       }
       return -1;
     },
-    objFilter(object, callback) {
+    objFilter: function (object, callback) {
       const output = {};
       for (let k in object) {
         let item = object[k];
         if (callback(item)) output[k] = item;
       }
       return output;
+    },
+    targetedSort: function( object, nodeString, desc=true ) {
+      const array = [];
+      for (let key in object) {
+        array.push([key, faria.data.selectObjNode(object, key + '.' + nodeString)]);
+      }
+      return desc
+        ? array.sort( (a, b) => (b[1] - a[1]) )
+        : array.sort( (a, b) => (a[1] - b[1]) );
     }
   }
 };
