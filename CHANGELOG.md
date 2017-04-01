@@ -18,3 +18,4 @@
  * added function `faria.data.shallowSort()`
  * added function `faria.data.isInObjList()`
  * added function `faria.data.indexInObjList()`
+ * added function `faria.data.objFilter()`

@@ -243,6 +243,14 @@ faria = {
         if (item[key] === value) return i;
       }
       return -1;
+    },
+    objFilter(object, callback) {
+      const output = {};
+      for (let k in object) {
+        let item = object[k];
+        if (callback(item)) output[k] = item;
+      }
+      return output;
     }
   }
 };

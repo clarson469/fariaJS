@@ -620,6 +620,39 @@ faria.data.indexInObjList(objList, 'id', 'obj03');
 faria.data.indexInObjList(objList, 'id', 'obj04');
 // => -1</code></pre>
     </article>
+    <article>
+      <h3 id='objFilter' class='article-title'><a href='#objFilter' class='bookmark'>objFilter()</a></h3>
+      <pre><code class='language-javascript'>faria.data.objFilter( object, callback )</code></pre>
+      <p class='article-text'>Works like the built-in Array.prototype.filter() method, but for an object.<br>That is, it filters out any key/value pairs in the object that, when passed to a callback, return "false".<br>(Note that this function creates a new object, rather than returning a modified one.)</p>
+      <h5 class='article-subhead'>Arguments</h5>
+      <span class='article-text indented'>object (Object)</span>
+      <span class='article-text'>The object to be filtered</span>
+      <br><br>
+      <span class='article-text indented'>callback (Function)</span>
+      <span class='article-text'>The funcition used to determine whether or not a key/value pair should be included in the filtered object.<br>(Note that this function should return Booleans only)</span>
+      <h5 class='article-subhead'>Returns</h5>
+      <span class='article-text indented'>(Object)</span>
+      <span class='article-text'>A new object, containing any key/value pairs from the original that would yield a "true" response from the callback</span>
+      <pre><code class='language-javascript'>var obj = {
+  one: { id: 'obj01' },
+  two: { id: 'obj02' },
+  three: { id: 'obj03' }
+};
+
+faria.data.objFilter(obj, i => i.id === 'obj02');
+// => { two: { id: 'obj02' } }
+
+var obj = {
+  one: { name: 'Carol' },
+  two: { name: 'Cheryl' },
+  three: { name: 'Cristal' },
+  four: { name: 'Carina' },
+  five: { name: 'Cherlene' }
+};
+
+faria.data.objFilter(obj, i => i.name.includes('Ch'));
+// => { two: { name: 'Cheryl' }, five: { name: 'Cherlene' } }</code></pre>
+    </article>
   </section>
   <script type='text/javascript' src='prism/prism.js'></script>
 </body>
