@@ -40,6 +40,94 @@ header {
   padding: 10px 20px 10px 20px;
 }
 
+nav {
+  position: relative;
+  max-width: 66vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+input[id$='-dropdown-open'] {
+  display: none;
+}
+
+.dropdown-label {
+  color: white;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.dropdown-label:hover {
+  cursor: pointer;
+}
+
+input[id$='-dropdown-open'] ~ .dropdown-label::before, input[id$='-dropdown-open'] ~ .dropdown-label::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  height: 15px;
+  width: 2px;
+  background: white;
+  transition: transform 400ms;
+}
+
+input[id$='-dropdown-open'] ~ .dropdown-label::before {
+  right: 10px;
+  transform: rotate(-45deg);
+}
+
+input[id$='-dropdown-open'] ~ .dropdown-label::after {
+  right: 0;
+  transform: rotate(45deg);
+}
+
+input[id$='-dropdown-open']:checked ~ .dropdown-label::before {
+  right: 10px;
+  transform: rotate(45deg);
+}
+
+input[id$='-dropdown-open']:checked ~ .dropdown-label::after {
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+menu[id$='-dropdown'] {
+  position: absolute;
+  top: 39px;
+  background: #ebebeb;
+  list-style: none;
+  padding: 10px 50px 10px 25px;
+  width: 300px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+menu[id$='-dropdown'] > li {
+  margin: 10px 0 10px 0;
+}
+
+.article-link {
+  color: black;
+  text-decoration: none;
+}
+
+.section-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  width: 200px;
+  border-bottom: 1px solid #ee6ece;
+}
+
 section {
   width: 100vw;
   padding-left: 30px;
@@ -57,7 +145,7 @@ section {
   display: inline-block;
 }
 
-.section-title:hover::before {
+.section-title:hover::before, .section-link:hover::before, .article-link:hover::before {
   content:'#';
   position: absolute;
   left: 5px;
