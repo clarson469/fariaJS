@@ -5,7 +5,7 @@ A JavaScript Utility library
 
 __N.B. At the minute, fariaJS is only available in ES6. A transpiled version for use in browsers will be available soon.__  
 
-__fariaJS is now a proper(ish) package! download and extract the contents to the node_modules folder in your project, and then use either `var faria = require('faria');` of `import faria from 'faria';`, depending on how your project is set up. I should stress that you do still need some kind of transpiler (i.e. babel and webpack, etc.) in your project for faria to work__
+__fariaJS is now a proper(ish) package! download and extract the contents, `cd` into your project, and use the command `npm install \path\to\fariaJS`  I should stress that you do still need some kind of transpiler (i.e. babel and webpack, etc.) in your project for faria to work__
 
 
 ## What is fariaJS?
