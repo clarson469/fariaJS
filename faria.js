@@ -79,6 +79,7 @@ faria = {
       return string.match(exp).map((item) => (item.slice(1,-1)));
     },
     formatText: function ( string, args ) {
+      if (!string.includes('{')) return string;
       if (typeof args === 'string' || typeof args === 'number') args = [args];
       const markers = faria.string.getBetween(string, '{', '}', false),
             setMarkers = faria.data.getUnique(markers);

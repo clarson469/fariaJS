@@ -13,6 +13,7 @@
  * fixed bug with `faria.data.getUnique()`
 
 ## Version 0.1.3
+ * fixed bug with `faria.string.formatText()`
  * added function `faria.string.capitalise()`
  * added function `faria.data.cloneObject()`
  * added function `faria.data.shallowSort()`
