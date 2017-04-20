@@ -21,3 +21,7 @@
  * added function `faria.data.indexInObjList()`
  * added function `faria.data.objFilter()`
  * added function `faria.data.targetSort()`
+
+## Version 0.1.4
+ * added function `faria.data.deepIncludes()`
+ * fixed typo in "README.md"

@@ -1,4 +1,4 @@
-# fariaJS v0.1.3
+# fariaJS v0.1.4
 A JavaScript Utility library  
 
 [Documentation](https://clarson469.github.io/fariaJS/)
@@ -15,4 +15,4 @@ The second is some slightly more advanced bits of array / object-literal manipul
 Both of these will be added to regularly, basically as I think of them / write them.
 
 ## Why is it called fariaJS?
-I like books, I like _The Count of Monte Cristo_, and the crazy priest who helps Edmond when he is jailed is called Abbé Faria. This library is meant for helping devlopers. It makes sense...
+I like books, I like _The Count of Monte Cristo_, and the crazy priest who helps Edmond when he is jailed is called Abbé Faria. This library is meant for helping developers. It makes sense...
